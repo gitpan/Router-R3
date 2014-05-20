@@ -1,0 +1,12 @@
+Changes
+Makefile.PL
+MANIFEST
+ppport.h
+R3.xs
+README
+t/Router-R3.t
+fallback/const-c.inc
+fallback/const-xs.inc
+lib/Router/R3.pm
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)
