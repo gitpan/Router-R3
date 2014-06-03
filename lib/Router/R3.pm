@@ -9,7 +9,7 @@ require Exporter;
 use AutoLoader;
 
 use version;
-our $VERSION = qv '0.10.0';
+our $VERSION = qv '0.10.1';
 
 sub AUTOLOAD {
     # This AUTOLOAD is used to 'autoload' constants from the constant()
@@ -103,6 +103,33 @@ Or from GitHub:
     Match strings
 
 =back
+
+=head1 Benchmark
+
+    Benchmarking 'plain string matching' by path '/corge/quux/bar'
+    ===============================================================
+                    Rate  HTTP::Router Router::Simple  Router::Boom    Router::R3
+    HTTP::Router      203/s            --           -89%         -100%         -100%
+    Router::Simple   1782/s          779%             --          -99%         -100%
+    Router::Boom   168658/s        83094%          9365%            --          -82%
+    Router::R3     954407/s       470684%         53461%          466%            --
+
+    Benchmarking 'regexp string matching' by path '/post/2012/03'
+    ===============================================================
+                    Rate  HTTP::Router Router::Simple  Router::Boom    Router::R3
+    HTTP::Router     1076/s            --           -88%          -99%         -100%
+    Router::Simple   9309/s          765%             --          -91%          -97%
+    Router::Boom   104387/s         9602%          1021%            --          -66%
+    Router::R3     306925/s        28426%          3197%          194%            --
+
+    Benchmarking 'first charactar matching' by path '/'
+    ===============================================================
+                        Rate  HTTP::Router Router::Simple Router::Boom    Router::R3
+    HTTP::Router      3839/s            --           -87%         -98%         -100%
+    Router::Simple   30545/s          696%             --         -83%          -98%
+    Router::Boom    180555/s         4603%           491%           --          -88%
+    Router::R3     1535999/s        39910%          4929%         751%            --
+
 
 =head1 SEE ALSO
 
