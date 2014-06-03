@@ -9,7 +9,7 @@ require Exporter;
 use AutoLoader;
 
 use version;
-our $VERSION = qv '0.9.3';
+our $VERSION = qv '0.10.0';
 
 sub AUTOLOAD {
     # This AUTOLOAD is used to 'autoload' constants from the constant()
@@ -77,6 +77,18 @@ By using the constructed prefix trie in the start-up time, you can dispatch rout
   /blog/post/{id}        use [^/]+ regular expression by default.
   /blog/post/{id:\d+}    use `\d+` regular expression instead of default.
   /blog/post/{id:\d{2}}  use `\d{2}` regular expression instead of default.
+
+=head1 INSTALLATION
+
+Install from CPAN:
+
+    $ cpanm Router::R3
+
+Or from GitHub:
+
+    $ git clone https://github.com/CindyLinz/Perl-Router-R3.git
+    $ cd Perl-Router-R3
+    $ cpanm -v --installdeps .
 
 =head2 METHODS
 
